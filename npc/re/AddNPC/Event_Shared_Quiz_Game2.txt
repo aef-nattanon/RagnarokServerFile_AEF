@@ -1,0 +1,163 @@
+-	script	Quiz7Girl::EvQuiz	-1,{
+
+	if($@M_QuizEv==0) {
+		mes "[Quiz Girl]";
+		mes "มีเวลา 10 นาที ในการตอบคำถาม หลังจากคำถามมาแล้ว";
+		mes "^FF8000พบกับ Quiz ได้ทุกๆ 20 นาทีนะคะ^000000";
+		close;
+	}
+
+	if($@M_QuizEv==1) {
+		announce "Quiz : กรุณารอคำถามค่ะ",bc_self,0xFF8000;
+		end;
+	}
+
+	announce $@M_QuizEvQ$,bc_self,0xFF8044;
+
+	mes "[Quiz Girl]";
+	mes "^FF8000 " + $@M_QuizEvQ$;
+
+	input @M_QuizEvA$;
+
+	if($@M_QuizEv<=1) {
+		next;
+		mes "[Quiz Girl]";
+		mes "คุณตอบไม่ทันค่ะ";
+		mes "^FF8000พบกับ Quiz ได้ทุกๆ 20 นาทีนะคะ^000000";
+		close;
+	}
+	if(@M_QuizEvA$ == $@M_QuizEvA$) {
+		set $@M_QuizEv,0;
+		announce "Quiz : ผู้ตอบถูกคือ ["+strcharinfo(0)+"] และคำตอบที่ถูกคือ ["+$@M_QuizEvA$+"]",bc_all,0xFF8000;
+		getitem 7720,5;
+		stopnpctimer;
+
+		mes " ";
+		mes "^000000 ถูกต้องค่ะ";
+		close;
+	} else {
+		mes " ";
+		mes "^000000 ผิดค่ะ";
+		close;
+	}
+
+	mes "[Quiz Girl]";
+	mes "Script อาจเกิดความขัดข้อง โปรดแจ้งผู้ดูแลระบบ";
+	close;
+	end;
+
+// ====================== {000-01} ระบบคำถาม ======================
+
+//OnMinute:
+
+	
+if (strnpcinfo(0) == "Quiz7Girl") end;
+	if(gettime(3) < 10) { set $@M_QuizTime$,"0"+ gettime(3); }
+	else { set $@M_QuizTime$,gettime(3); }
+	if(gettime(2) < 10) { set $@M_QuizTime$,$@M_QuizTime$ +":0"+ gettime(2); }
+	else { set $@M_QuizTime$,$@M_QuizTime$ +":"+ gettime(2); }
+
+	announce "Quiz : ถึงเวลา Quiz Time คะ!! คำถามประจำเวลา "+ $@M_QuizTime$ +"น. คือ...",bc_all,0xFF8000;
+
+	callsub RD_QuizG001;
+
+	set $@M_QuizEv,1;
+	initnpctimer;
+	end;
+
+OnInit:
+	set $@M_QuizEv,0;
+	setcell "morocc",170,73,174,77,cell_walkable,0;
+	waitingroom "ตอบคำถาม ทุก 20 นาที",0;
+	end;
+
+
+OnTimer800:
+	set $@M_QuizEv,2;
+	announce $@M_QuizEvQ$,bc_all,0xFF8044;
+	end;
+
+OnTimer500:
+	if($@M_QuizEv != 0) { announce "Quiz : เหลือเวลาอีก 5 นาทีจะหมดเวลาตอบคำถามค่ะ",bc_all,0xFF8000; }
+	end;
+
+OnTimer100:
+	if($@M_QuizEv != 0) {
+		set $@M_QuizEv,0;
+		announce "Quiz : ผ่านไป 10 นาที ไม่มีผู้ใดตอบถูก โปรดรอคำถามใหม่ในรอบถัดไปค่ะ",bc_all,0xFF8000;
+		stopnpctimer;
+	}
+	end;
+
+
+// ====================== {001} โดเมน ======================
+
+RD_QuizG001:
+	switch(rand(1,15)){
+	case 1:
+		set $@M_QuizEvQ$,"1+1 = ?";
+		set $@M_QuizEvA$,"2";
+		break;
+	case 2:
+		set $@M_QuizEvQ$,"100+100 = ?";
+		set $@M_QuizEvA$,"200";
+		break;
+	case 3:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;
+	case 4:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;
+	case 5:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;
+	case 6:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;
+	case 7:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;
+	case 8:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;	
+	case 9:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;	
+	case 10:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;
+	case 11:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;	
+	case 12:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;	
+	case 13:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;	
+	case 14:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;	
+	case 15:
+		set $@M_QuizEvQ$,"300+300 = ?";
+		set $@M_QuizEvA$,"600";
+		break;			
+	
+	}
+	return;
+
+}
+
+payon,115,118,4	duplicate(EvQuiz)	IQGame	77

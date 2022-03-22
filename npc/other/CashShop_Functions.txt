@@ -1,0 +1,528 @@
+//===== rAthena Script ======================================= 
+//= Cash Shop Functions
+//===== By: ================================================== 
+//= L0ne_W0lf
+//===== Current Version: ===================================== 
+//= 1.8
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= Used for Cash shop items:
+//= - Kafra Card
+//= - Giant Fly Wing
+//= - Neuralizer
+//= - Dungeon Teleport Scroll
+//= Also included are functions related to the VIP system.
+//===== Additional Comments: ================================= 
+//= 1.0 First version. [L0ne_W0lf]
+//=     F_CashPartyCall Optimized by Trancid.
+//= 1.1 Updated Dungeon Teleport Scroll. [L0ne_W0lf]
+//=     Added Town Teleport Scroll Function
+//=     Added Seige Teleport Scroll Function
+//= 1.2 Updated the dungeon teleport scroll menu. [L0ne_w0lf]
+//= 1.3 Implemented Aozi Giant Flywing Fix. (bugreport:4242) [L0ne_w0lf]
+//= 1.4 Simplified Giant Flywing function using warpparty. [L0ne_w0lf]
+//= 1.5 Neuralizer is no longer consumed upon failure. [Euphy]
+//= 1.6 Updated Teleport functions and added Curious_Snowball. [Euphy]
+//= 1.7 Added Dungeon Teleport Scroll II maps. [Euphy]
+//= 1.8 Added VIP function. [Euphy]
+//= 1.9 Added checkdragon() in F_CashReset. [Capuche]
+//= 2.0 Moved VIP_Third_Class function into other/re/CashShop_Functions. [Capuche]
+//============================================================ 
+
+// Kafra Card
+//============================================================ 
+// - Open player's storage.
+// - No arguments.
+function	script	F_CashStore	{
+	cutin "kafra_01",2;
+	mes "[Kafra Employee]";
+	mes "Welcome to the Kafra Corporation.";
+	mes "Here, let me open your Storage for you.";
+	close2;
+	openstorage;
+	cutin "",255;
+	return;
+}
+
+// Giant Fly Wing
+//============================================================ 
+// - Warp party leader to random spot on the map.
+// - Summon Party members on party leader map to a 3x3 location around the leader.
+// - No arguments.
+function	script	F_CashPartyCall	{
+	warp "Random",0,0;
+	if (is_party_leader() == true)
+		warpparty "Leader", 0, 0, getcharid(1), strcharinfo(3), 3, 3;
+	return;
+}
+
+// Neuralizer
+//============================================================ 
+// - Reset players skills. Weight must be 0, options must be off.
+// - No arguments.
+function	script	F_CashReset	{
+	if (Class != Job_Novice && Weight == 0 && !checkriding() && !checkfalcon() && !checkcart() && !ismounting() && !checkdragon()) {
+		resetskill;
+		sc_end SC_ALL;
+		if (countitem(12213)) delitem 12213,1;
+	}
+	return;
+}
+
+// Dungeon Teleport Scroll
+
+//============================================================ 
+// - Warp player to the selected dungeon.
+// - Arg(0) = type of scroll.
+function	script	F_CashDungeon	{
+	switch(getarg(0)) {
+	
+		switch(select("Anthell:Clock Tower:Geffen Dungeon:Glast Heim:Hidden Dungeon:Mjolnir Dead Pit:Orc Dungeon:Prontera Culvert:Payon Dungeon:Pyramids:Sphinx:Sunken Ship:Toy Factory:Byalan Dungeon:Turtle Island:Magma Dungeon:Beach Dungeon:Amatsu Dungeon:Ayothaya Dungeon:Gunlun Dungeon:Louyang Dungeon")) {
+		
+		case 1:
+		menu "- ชั้นที่ 1",danthell1,"- ชั้นที่ 2",danthell2;
+
+		case 2:
+		menu "- ชั้นที่ 1",dclock1,"- ชั้นที่ 2",dclock2,"- ชั้นที่ 3",dclock3,"- ชั้นที่ 4",dclock4,"- ใต้ดิน 1",dalde1,"- ใต้ดิน 2",dalde2,"- ใต้ดิน 3",dalde3,"- ใต้ดิน 4",dalde4;
+	
+		case 3:
+		menu "- ชั้นที่ 1",dgeffen1,"- ชั้นที่ 2",dgeffen2,"- ชั้นที่ 3",dgeffen3,"- ชั้นที่ 4",dgeffen4;
+		
+		case 4:
+		menu "- Entrance",dglastent,"- Castle 1",dglastcast1,"- Castle 2",dglastcast2,"- Chivalry 1",dglastchiv1,"- Chivalry 2",dglastchiv2,"- Churchyard",dglastyard,"- Culvert 1",dglastcul1,"- Culvert 2",dglastcul1,"- Culvert 3",dglastcul3,"- Culvert 4",dglastcul4,"- St.Abbey",dglastchur,"- Staircase Dungeon",dglaststep,"- Underground Cave 1",dglastcave1,"- Underground Cave 2",dglastcave2,"- Underground Prison 1",dglastpris1,"- Underground Prison 2",dglastpris2;
+		
+		case 5:
+		menu "- ชั้นที่ 1",dhidden1,"- ชั้นที่ 2",dhidden2,"- ชั้นที่ 3",dhidden3;
+		
+		case 6:
+		menu "- ชั้นที่ 1",dcoal1,"- ชั้นที่ 2",dcoal2,"- ชั้นที่ 3",dcoal3;
+		
+		case 7:
+		menu "- ชั้นที่ 1",dorc1,"- ชั้นที่ 2",dorc2;
+		
+		case 8:
+		menu "- ชั้นที่ 1",dculvert1,"- ชั้นที่ 2",dculvert2,"- ชั้นที่ 3",dculvert3,"- ชั้นที่ 4",dculvert4;
+		
+		case 9:
+		menu "- ชั้นที่ 1",dpayon1,"- ชั้นที่ 2",dpayon2,"- ชั้นที่ 3",dpayon3,"- ชั้นที่ 4",dpayon4,"- ชั้นที่ 5",dpayon5;
+		
+		case 10:
+		menu "- ชั้นที่ 1",dpyramids1,"- ชั้นที่ 2",dpyramids2,"- ชั้นที่ 3",dpyramids3,"- ชั้นที่ 4",dpyramids4,"- ใต้ดิน 1",dpyramidsb1,"- ใต้ดิน 2",dpyramidsb2;
+		
+		case 11:
+		menu "- ชั้นที่ 1",dsphinx1,"- ชั้นที่ 2",dsphinx2,"- ชั้นที่ 3",dsphinx3,"- ชั้นที่ 4",dsphinx4,"- ชั้นที่ 5",dsphinx5;
+		
+		case 12:
+		menu "- ชั้นที่ 1",dsunken1,"- ชั้นที่ 2",dsunken2;
+		
+		case 13:
+		menu "- ชั้นที่ 1",dtoy1,"- ชั้นที่ 2",dtoy2;
+		
+		case 14:
+		menu "- ชั้นที่ 1",dbyalan1,"- ชั้นที่ 2",dbyalan2,"- ชั้นที่ 3",dbyalan3,"- ชั้นที่ 4",dbyalan4,"- ชั้นที่ 5",dbyalan5;
+		
+		case 15:
+		menu "- ชั้นที่ 1",Turtle1,"- ชั้นที่ 2",Turtle2,"- ชั้นที่ 3",Turtle3,"- ชั้นที่ 4",Turtle4;
+		
+		case 16:
+		menu "- ชั้นที่ 1",mag_dun1,"- ชั้นที่ 2",mag_dun2;
+		
+		case 17:
+		menu "- ชั้นที่ 1",beach_dun1,"- ชั้นที่ 2",beach_dun2,"- ชั้นที่ 3",beach_dun3;
+		
+		case 18:
+		menu "- ชั้นที่ 1",ama_dun1,"- ชั้นที่ 2",ama_dun2,"- ชั้นที่ 3",ama_dun3;
+		
+		case 19:
+		menu "- ชั้นที่ 1",ayo_dun1,"- ชั้นที่ 2",ayo_dun2;
+		
+		case 20:
+		menu "- ชั้นที่ 1",gon_dun1,"- ชั้นที่ 2",gon_dun2,"- ชั้นที่ 3",gon_dun3;
+		
+		
+		case 21:
+		menu "- ชั้นที่ 1",lou_dun1,"- ชั้นที่ 2",lou_dun2,"- ชั้นที่ 3",lou_dun3;
+		
+		
+		lou_dun1:	warp "lou_dun01",218,196;	goto swppoint; close;
+		lou_dun2:	warp "lou_dun02",282,20;	goto swppoint; close;
+		lou_dun3:	warp "lou_dun03",165,38;	goto swppoint; close;
+		
+		gon_dun1:	warp "gon_dun01",153,53;	goto swppoint; close;
+		gon_dun2:	warp "gon_dun02",28,113;	goto swppoint; close;
+		gon_dun3:	warp "gon_dun03",68,16;	goto swppoint; close;
+		
+		
+		ayo_dun1:	warp "ayo_dun01",275,19;	goto swppoint; close;
+		ayo_dun2:	warp "ayo_dun02",24,26;	goto swppoint; close;
+
+		
+		
+		ama_dun1:	warp "ama_dun01",228,11;	goto swppoint; close;
+		ama_dun2:	warp "ama_dun02",34,41;	goto swppoint; close;
+		ama_dun3:	warp "ama_dun03",119,14;	goto swppoint; close;
+		
+	//	close;
+		//----------------Dungeons----------------\\
+		beach_dun1:	warp "beach_dun",266,67;	goto swppoint; close;
+		beach_dun2:	warp "beach_dun2",255,244;	goto swppoint; close;
+		beach_dun3:	warp "beach_dun3",23,260;	goto swppoint; close;
+		
+		mag_dun1:	warp "mag_dun01",126,68;	goto swppoint; close;
+		mag_dun2:	warp "mag_dun02",47,30;	goto swppoint; close;
+		
+		Turtle1:	warp "tur_dun01",152,55;	goto swppoint; close;
+		Turtle2:	warp "tur_dun02",148,264;	goto swppoint; close;
+		Turtle3:	warp "tur_dun03",132,189;	goto swppoint; close;
+		Turtle4:	warp "tur_dun04",100,192;	goto swppoint; close;
+		
+		dabbey1:	warp "abbey01",51,14;	goto swppoint; close;
+		dabbey2:	warp "abbey02",150,11;	goto swppoint; close;
+		dabbey3:	warp "abbey03",120,10;	goto swppoint; close;
+		dgld1:	warp "gld_dun01",119,17;	goto swppoint; close;
+		dgld2:	warp "gld_dun02",23,160;	goto swppoint; close;
+		dgld3:	warp "gld_dun03",238,271;	goto swppoint; close;
+		dgld4:	warp "gld_dun04",40,230;	goto swppoint; close;
+		dxmas1:	warp "xmas_dun01",205,16;	goto swppoint; close;
+		dxmas2:	warp "xmas_dun02",131,130;	goto swppoint; close;
+		dayo1:	warp "ayo_dun01",275,17;	goto swppoint; close;
+		dayo2:	warp "ayo_dun02",149,16;	goto swppoint; close;
+		danthell1:	warp "anthell01",35,262;	goto swppoint; close;
+		danthell2:	warp "anthell02",168,170;	goto swppoint; close;
+		damine1:	warp "ein_dun01",22,15;	goto swppoint; close;
+		damine2:	warp "ein_dun02",292,287;	goto swppoint; close;
+		dbio1:	warp "lhz_dun01",150,284;	goto swppoint; close;
+		dbio2:	warp "lhz_dun02",152,18;	goto swppoint; close;
+		dbio3:	warp "lhz_dun03",140,134;	goto swppoint; close;
+		djupe1:		warp "juperos_01",53,247;	goto swppoint; close;
+		djupe2:		warp "juperos_02",38,65;	goto swppoint; close;
+		djupecore:		warp "jupe_core",0,0;	goto swppoint; close;
+		dlou1:		warp "lou_dun01",218,196;	goto swppoint; close;
+		dlou2:		warp "lou_dun02",282,20;	goto swppoint; close;
+		dlou3:		warp "lou_dun03",165,38;	goto swppoint; close;
+		dbeach1:	warp "beach_dun",266,67;	goto swppoint; close;
+		dbeach2:	warp "beach_dun2",255,244;	goto swppoint; close;
+		dbeach3:	warp "beach_dun3",23,260;	goto swppoint; close;
+		dbyalan1:	warp "iz_dun00",168,168;	goto swppoint; close;
+		dbyalan2:	warp "iz_dun01",253,252;	goto swppoint; close;
+		dbyalan3:	warp "iz_dun02",236,204;	goto swppoint; close;
+		dbyalan4:	warp "iz_dun03",32,63;	goto swppoint; close;
+		dbyalan5:	warp "iz_dun04",26,27;	goto swppoint; close;
+		dalde1:		warp "alde_dun01",297,25;	goto swppoint; close;
+		dalde2:		warp "alde_dun02",127,169;	goto swppoint; close;
+		dalde3:		warp "alde_dun03",277,178;	goto swppoint; close;
+		dalde4:		warp "alde_dun04",268,74;	goto swppoint; close;
+		dclock1:	warp "c_tower1",199,159;	goto swppoint; close;
+		dclock2:	warp "c_tower2",148,283;	goto swppoint; close;
+		dclock3:	warp "c_tower3",65,147;	goto swppoint; close;
+		dclock4:	warp "c_tower4",56,155;	goto swppoint; close;
+		dcoal1:		warp "mjo_dun01",52,17;	goto swppoint; close;
+		dcoal2:		warp "mjo_dun02",381,343;	goto swppoint; close;
+		dcoal3:		warp "mjo_dun03",302,262;	goto swppoint; close;
+		dculvert1:	warp "prt_sewb1",131,247;	goto swppoint; close;
+		dculvert2:	warp "prt_sewb2",19,19;	goto swppoint; close;
+		dculvert3:	warp "prt_sewb3",180,169;	goto swppoint; close;
+		dculvert4:	warp "prt_sewb4",100,92;	goto swppoint; close;
+		dgeffen1:	warp "gef_dun00",104,99;	goto swppoint; close;
+		dgeffen2:	warp "gef_dun01",115,236;	goto swppoint; close;
+		dgeffen3:	warp "gef_dun02",106,132;	goto swppoint; close;
+		dgeffen4:	warp "gef_dun03",203,200;	goto swppoint; close;
+		dglastent:	warp "glast_01",370,304;	goto swppoint; close;
+		dglastcast1:	warp "gl_cas01",199,29;	goto swppoint; close;
+		dglastcast2:	warp "gl_cas02",104,25;	goto swppoint; close;
+		dglastchiv1:	warp "gl_knt01",150,15;	goto swppoint; close;
+		dglastchiv2:	warp "gl_knt02",157,287;	goto swppoint; close;
+		dglastyard:	warp "gl_chyard",147,15;	goto swppoint; close;
+		dglastcul1:	warp "gl_sew01",258,255;	goto swppoint; close;
+		dglastcul2:	warp "gl_sew02",108,291;	goto swppoint; close;
+		dglastcul3:	warp "gl_sew03",171,283;	goto swppoint; close;
+		dglastcul4:	warp "gl_sew04",68,277;	goto swppoint; close;
+		dglastchur:	warp "gl_church",156,7;	goto swppoint; close;
+		dglaststep:	warp "gl_step",12,7;	goto swppoint; close;
+		dglastcave1:	warp "gl_dun01",133,271;	goto swppoint; close;
+		dglastcave2:	warp "gl_dun02",224,274;	goto swppoint; close;
+		dglastpris1:	warp "gl_prison",14,70;	goto swppoint; close;
+		dglastpris2:	warp "gl_prison1",150,14;	goto swppoint; close;
+		dhidden1:	warp "prt_maze01",176,7;	goto swppoint; close;
+		dhidden2:	warp "prt_maze02",93,21;	goto swppoint; close;
+		dhidden3:	warp "prt_maze03",23,8;	goto swppoint; close;
+		dmagma1:	warp "mag_dun01",126,68;	goto swppoint; close;
+		dmagma2:	warp "mag_dun02",47,30;	goto swppoint; close;
+		dorc1:		warp "orcsdun01",32,170;	goto swppoint; close;
+		dorc2:		warp "orcsdun02",21,185;	goto swppoint; close;
+		dpayon1:	warp "pay_dun00",21,183;	goto swppoint; close;
+		dpayon2:	warp "pay_dun01",19,33;	goto swppoint; close;
+		dpayon3:	warp "pay_dun02",19,63;	goto swppoint; close;
+		dpayon4:	warp "pay_dun03",155,159;	goto swppoint; close;
+		dpayon5:	warp "pay_dun04",201,204;	goto swppoint; close;
+		dpyramids1:	warp "moc_pryd01",192,9;	goto swppoint; close;
+		dpyramids2:	warp "moc_pryd02",10,192;	goto swppoint; close;
+		dpyramids3:	warp "moc_pryd03",100,92;	goto swppoint; close;
+		dpyramids4:	warp "moc_pryd04",181,11;	goto swppoint; close;
+		dpyramidsb1:	warp "moc_pryd05",94,96;	goto swppoint; close;
+		dpyramidsb2:	warp "moc_pryd06",192,10;	goto swppoint; close;
+		dsphinx1:	warp "in_sphinx1",288,9;	goto swppoint; close;
+		dsphinx2:	warp "in_sphinx2",149,81;	goto swppoint; close;
+		dsphinx3:	warp "in_sphinx3",210,54;	goto swppoint; close;
+		dsphinx4:	warp "in_sphinx4",10,222;	goto swppoint; close;
+		dsphinx5:	warp "in_sphinx5",100,99;	goto swppoint; close;
+		dsunken1:	warp "treasure01",69,24;	goto swppoint; close;
+		dsunken2:	warp "treasure02",102,27;	goto swppoint; close;
+		dtoy1:		warp "xmas_dun01",205,19;	goto swppoint; close;
+		dtoy2:		warp "xmas_dun02",129,133;	goto swppoint; close;
+		dturtleent:	warp "tur_dun01",154,49;	goto swppoint; close;
+		dturtle1:	warp "tur_dun02",148,261;	goto swppoint; close;
+		dturtle2:	warp "tur_dun03",132,189;	goto swppoint; close;
+		dturtle3:	warp "tur_dun04",100,192;	goto swppoint; close;
+		dama1:		warp "ama_dun01",228,11;	goto swppoint; close;
+		dama2:		warp "ama_dun02",34,41;	goto swppoint; close;
+		dama3:		warp "ama_dun03",119,14;	goto swppoint; close;
+		dgon1:		warp "gon_dun01",153,53;	goto swppoint; close;
+		dgon2:		warp "gon_dun02",28,113;	goto swppoint; close;
+		dgon3:		warp "gon_dun03",68,16;	goto swppoint; close;
+		dgefenia1:	warp "gefenia01",40,103;	goto swppoint; close;
+		dgefenia2:	warp "gefenia02",203,34;	goto swppoint; close;
+		dgefenia3:	warp "gefenia03",266,168;	goto swppoint; close;
+		dgefenia4:	warp "gefenia04",130,272;	goto swppoint; close;
+		thana1:	warp "tha_t01",0,0;	goto swppoint; close;
+		thana2:	warp "tha_t02",0,0;	goto swppoint; close;
+		thana3:	warp "tha_t03",0,0;	goto swppoint; close;
+		thana4:	warp "tha_t04",0,0;	goto swppoint; close;
+		thana5:	warp "tha_t05",0,0;	goto swppoint; close;
+		thana6:	warp "tha_t06",0,0;	goto swppoint; close;
+		thana7:	warp "tha_t07",0,0;	goto swppoint; close;
+		thana8:	warp "tha_t08",0,0;	goto swppoint; close;
+		thana9:	warp "tha_t09",0,0;	goto swppoint; close;
+		thana10:	warp "tha_t10",0,0;	goto swppoint; close;
+		thana11:	warp "tha_t11",0,0;	goto swppoint; close;
+		thana12:	warp "tha_t12",0,0;	goto swppoint; close;
+		thanaboss:	warp "thana_boss",0,0;	goto swppoint; close;
+		dabyss1:	warp "abyss_01",260,270;	goto swppoint; close;
+		dabyss2:	warp "abyss_02",271,270;	goto swppoint; close;
+		dabyss3:	warp "abyss_03",116,28;	goto swppoint; close;
+		dkeil1:	warp "kh_dun01",3,230;	goto swppoint; close;
+		dkeil2:	warp "kh_dun02",41,198;	goto swppoint; close;
+		dodin1:	warp "odin_tem01",98,145;	goto swppoint; close;
+		dodin2:	warp "odin_tem02",29,334;	goto swppoint; close;
+		dodin3:	warp "odin_tem03",120,53;	goto swppoint; close;
+		dice1:	warp "ice_dun01",157,15;	goto swppoint; close;
+		dice2:	warp "ice_dun02",151,154;	goto swppoint; close;
+		dice3:	warp "ice_dun03",149,24;	goto swppoint; close;
+		dfreya1:	warp "ra_san01",139,17;	goto swppoint; close;
+		dfreya2:	warp "ra_san02",35,21;	goto swppoint; close;
+		dfreya3:	warp "ra_san03",6,149;	goto swppoint; close;
+		dfreya4:	warp "ra_san04",204,218;	goto swppoint; close;
+		dfreya5:	warp "ra_san05",150,10;	goto swppoint; close;
+		dthorv1:	warp "thor_v01",21,228;	goto swppoint; close;
+		dthorv2:	warp "thor_v02",76,204;	goto swppoint; close;
+		dthorv3:	warp "thor_v03",33,272;	goto swppoint; close;
+		dmosk1:	warp "mosk_dun01",190,46;	goto swppoint; close;
+		dmosk2:	warp "mosk_dun02",163,31;	goto swppoint; close;
+		dmosk3:	warp "mosk_dun03",33,136;	goto swppoint; close;
+	
+	}
+	}
+	return;
+}
+
+// Coloured Butterly Wings
+//============================================================ 
+// - Warp player to different cities acording to the scroll.
+// - Arg(0) = type of scroll.
+function	script	F_CashCity	{
+	switch(getarg(0)) {
+	case 1: // Yellow - Rune-Midgarts
+		switch(select("Prontera:Izlude:Geffen:Payon:Morocc:Alberta:Al de Baran")) {
+			case 1: warp "prontera",122,87; end;
+			case 2: if (checkre(0)) warp "izlude",130,90; else warp "izlude",91,105; end;
+			case 3: warp "geffen",128,48; end;
+			case 4: warp "payon",164,123; end;
+			case 5: warp "morocc",160,100; end;
+			case 6: warp "alberta",117,50; end;
+			case 7: warp "aldebaran",140,110; end;
+		}
+	case 2: // Green - Schwarzwald
+		switch(select("Juno:Lighthalzen:Einbroch:Einbech:Hugel")) {
+			case 1: warp "yuno",160,170; end;
+			case 2: warp "lighthalzen",190,310; end;
+			case 3: warp "einbroch",230,190; end;
+			case 4: warp "einbech",187,120; end;
+			case 5: warp "hugel",92,165; end;
+		}
+	case 3: // Red - Arunafeltz
+		switch(select("Rachel:Veins")) {
+			case 1: warp "rachel",120,125; end;
+			case 2: warp "veins",215,105; end;
+		}
+	case 4: // Blue - Islands
+		switch(select("Amatsu:Kunlun:Ayothaya:Luoyang")) {
+			case 1: warp "amatsu",110,140; end;
+			case 2: warp "gonryun",160,115; end;
+			case 3: warp "ayothaya",220,170; end;
+			case 4: warp "louyang",217,95; end;
+		}
+	case 5: // Blue - Islands (Renewal)
+		switch(select("Amatsu:Kunlun:Ayothaya:Luoyang:Moscovia:Dewata:Brasilis")) {
+			case 1: warp "amatsu",110,140; end;
+			case 2: warp "gonryun",160,115; end;
+			case 3: warp "ayothaya",220,170; end;
+			case 4: warp "louyang",217,95; end;
+			case 5: warp "moscovia",224,195; end;
+			case 6: warp "dewata",200,107; end;
+			case 7: warp "brasilis",196,181; end;
+		}
+	}
+	return;
+}
+
+// Teleport Scrolls
+//============================================================ 
+// - Warp player to save point or city acording to the scroll.
+// - Arg(0) = type of scroll.
+function	script	F_CashTele	{
+	switch(getarg(0)) {
+	case 1:
+		switch(select("Prontera:Geffen:Al de Baran:Izlude:Savepoint")) {
+		case 1: warp "prontera",119,77; end;
+		case 2: warp "geffen",119,39; end;
+		case 3: warp "aldebaran",165,107; end;
+		case 4: if (checkre(0)) warp "izlude",128,105; else warp "izlude",91,105; end;
+		case 5: warp "SavePoint",0,0; end;
+		}
+	case 2:
+		switch(select("Payon:Alberta:Morocc:Comodo:Savepoint")) {
+		case 1: warp "payon",158,55; end;
+		case 2: warp "alberta",115,57; end;
+		case 3: warp "morocc",158,48; end;
+		case 4: warp "comodo",217,148; end;
+		case 5: warp "SavePoint",0,0; end;
+		}
+	case 3:
+		switch(select("Luoyang:Amatsu:Kunlun Field:Ayothaya:Savepoint")) {
+		case 1: warp "louyang",214,101; end;
+		case 2: warp "amatsu",112,145; end;
+		case 3: warp "gonryun",160,118; end;
+		case 4: warp "ayothaya",216,175; end;
+		case 5: warp "SavePoint",0,0; end;
+		}
+	case 4:
+		switch(select("Lutie Field:Umbala:Niflheim:Savepoint")) {
+		case 1: warp "xmas",148,131; end;
+		case 2: warp "umbala",93,154; end;
+		case 3: warp "niflheim",187,189; end;
+		case 4: warp "SavePoint",0,0; end;
+		}
+	case 5:
+		switch(select("Juno:Einbroch:Lighthalzen:Hugel:Savepoint")) {
+		case 1: warp "yuno",157,124; end;
+		case 2: warp "einbroch",230,192; end;
+		case 3: warp "lighthalzen",158,94; end;
+		case 4: warp "hugel",93,159; end;
+		case 5: warp "SavePoint",0,0; end;
+		}
+	case 6:
+		switch(select("Rachel:Veins:Savepoint")) {
+		case 1: warp "rachel",118,132; end;
+		case 2: warp "veins",214,125; end;
+		case 3: warp "SavePoint",0,0; end;
+		}
+	}
+	return;
+}
+
+// Siege Teleport Scroll
+//============================================================ 
+// - Warp player to selected guild castle.
+// - No arguments.
+function	script	F_CashSiegeTele	{
+	switch(select("Neuschwanstein (aldeg_cas01):Hohenschwangau (aldeg_cas02):Nuernberg (aldeg_cas03):Wuerzburg (aldeg_cas04):Rothenburg (aldeg_cas05):Repherion (gefg_cas01):Eeyorbriggar (gefg_cas02):Yesnelph (gefg_cas03):Bergel (gefg_cas04):Mersetzdeitz (gefg_cas05):Bright Arbor (payg_cas01):Sacred Altar (payg_cas02):Holy Shadow (payg_cas03):Scarlet Palace (payg_cas04):Bamboo Grove Hill (payg_cas05):Kriemhild (prtg_cas01):Swanhild (prtg_cas02):Fadhgridh (prtg_cas03):Skoegul (prtg_cas04):Gondul (prtg_cas05)")) {
+	case 1: warp "alde_gld",48,91; end;
+	case 2: warp "alde_gld",103,245; end;
+	case 3: warp "alde_gld",142,87; end;
+	case 4: warp "alde_gld",236,243; end;
+	case 5: warp "alde_gld",269,90; end;
+	case 6: warp "gef_fild13",217,75; end;
+	case 7: warp "gef_fild13",307,237; end;
+	case 8: warp "gef_fild13",77,297; end;
+	case 9: warp "gef_fild13",190,276; end;
+	case 10: warp "gef_fild13",312,91; end;
+	case 11: warp "pay_gld",121,232; end;
+	case 12: warp "pay_gld",297,116; end;
+	case 13: warp "pay_gld",318,293; end;
+	case 14: warp "pay_gld",140,164; end;
+	case 15: warp "pay_gld",202,264; end;
+	case 16: warp "prt_gld",141,64; end;
+	case 17: warp "prt_gld",240,131; end;
+	case 18: warp "prt_gld",153,133; end;
+	case 19: warp "prt_gld",126,240; end;
+	case 20: warp "prt_gld",195,240; end;
+	}
+	return;
+}
+
+// Curious Snowball
+//============================================================ 
+// - You can get an effect of Restore, Endure, or Wing of Butterfly.
+// - No arguments.
+function	script	F_Snowball	{
+	cutin "rutie_snownow03",2;
+	mes "[Snowman]";
+	mes "Merry Christmas!";
+	switch(select("Restore Some HP/SP:Strengthen My Body!:Restore My SP Fully.:Return to Savepoint")) {
+	case 1:
+		mes "Aha!";
+		mes "Quiet night~";
+		percentheal 70,70;
+		close2;
+		cutin "",255;
+		break;
+	case 2:
+		mes "Blessings.";
+		mes "Holy night~";
+		unitskilluseid getcharid(3),"SM_ENDURE",10;
+		close2;
+		cutin "",255;
+		break;
+	case 3:
+		mes "Hey!";
+		mes "White Christmas~";
+		percentheal 0,100;
+		close2;
+		cutin "",255;
+		break;
+	case 4:
+		mes "Jingle Bells~";
+		mes "Jingle Bells~ Jingle Bells!";
+		close2;
+		cutin "",255;
+		warp "SavePoint",0,0;
+		break;
+	}
+	end;
+}
+
+// Status reduction potion
+//============================================================
+// - Permanently reduces base stat <type> by <val>.
+// - Returns status points equals to points needed to raise
+//   that stat to original value.
+// - Doesn't work if base status <type> would become lower than 1 after reduction.
+// * callfunc("F_CashReduceStat",<type>{,<val>,<itemid>});
+function	script	F_CashReduceStat	{
+	.@type = getarg(0);
+	.@amount = getarg(1, -1);
+	.@itemid = getarg(2, 0);
+	
+	if((readparam(.@type) + .@amount) < 1) return;
+	
+	if(.@itemid) {
+		if(countitem(.@itemid))
+			delitem .@itemid,1;
+		else
+			return;
+	}
+	StatusPoint += needed_status_point(.@type, .@amount);
+	statusup2 .@type,.@amount;
+	return;
+}

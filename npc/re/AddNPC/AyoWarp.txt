@@ -1,0 +1,111 @@
+
+//ayo_fild02,280,150,0	warp	warp4	0,0,hoge,0,0
+ayo_fild02,280,150,0	warp	warp4	1,1,ayo_fild01,125,197
+ayo_dun01,275,15,0	warp	warp4	1,1,ayo_fild01,125,197
+ayo_dun01,25,280,0	warp	warp4	1,1,ayo_dun02,24,26
+ayo_dun02,24,21,0	warp	warp4	1,1,ayo_dun01,32,280
+ayo_dun02,276,21,0	warp	warp4	1,1,ayo_dun01,32,280
+-	script	Puraim	-1,{
+
+	mes "^0066FF[Puraim]^000000";		
+	mes "เจ้าต้องการไปสถานที่ใด";
+	mes "ข้าจะนำพาท่านไป";
+	
+	menu "ayo_fild02",w1,"ดันอโยธยา ชั้น1",w2,"ดันอโยธยา ชั้น2",w3;
+	
+	w1:
+	warp "ayo_fild02.gat",274,150;
+	close;	
+	
+	
+	w2:
+
+	warp "ayo_dun01.gat",275,19;
+	close;	
+	
+	w3:
+
+	warp "ayo_dun02.gat",0,0;
+	close;	
+	
+
+
+	
+}
+
+ayo_fild01,129,197,3	duplicate(Puraim)	Puraim#alb1	842
+
+
+-	script	ไปอโยธยา	-1,{
+
+	mes "^0066FF[ไปอโยธยา]^000000";		
+	mes "เข้าจะพาเจ้าไป ไปอโยธยา";
+	mes "เจ้าต้องการไปหรือไม่ ?";
+	
+	menu "ไปอโยธยา",w1;
+	
+	w1:
+	warp "ayothaya.gat",214,176;
+	close;	
+	
+	
+	
+}
+alberta,247,43,2	duplicate(ไปอโยธยา)	ไปอโยธยา#alb1	843
+
+
+
+//amatsu
+-	script	ไป Amatsu	-1,{
+
+	mes "^0066FF[ไป Amatsu]^000000";		
+	mes "เข้าจะพาเจ้าไป Amatsu";
+	mes "เจ้าต้องการไปหรือไม่ ?";
+	
+	menu "ไป Amatsu",w1;
+	
+	w1:
+	warp "amatsu.gat",198,84;
+	close;	
+	
+	
+	
+}
+alberta,247,64,2	duplicate(ไป Amatsu)	ไป Amatsu#alb1	55
+
+//louyang
+-	script	ไป Louyang	-1,{
+
+	mes "^0066FF[ไป Louyang]^000000";		
+	mes "เข้าจะพาเจ้าไป Louyang";
+	mes "เจ้าต้องการไปหรือไม่ ?";
+	
+	menu "ไป Louyang",w1;
+	
+	w1:
+	warp "louyang.gat",217,40;
+	close;	
+	
+	
+	
+}
+alberta,246,71,2	duplicate(ไป Louyang)	ไป Louyang#alb1	121
+
+
+//gonryun
+-	script	ไป Gonryun	-1,{
+
+	mes "^0066FF[ไป Gonryun]^000000";		
+	mes "เข้าจะพาเจ้าไป Gonryun";
+	mes "เจ้าต้องการไปหรือไม่ ?";
+	
+	menu "ไป Gonryun",w1;
+	
+	w1:
+	warp "gonryun.gat",160,120;
+	close;	
+	
+	
+	
+}
+alberta,247,92,2	duplicate(ไป Gonryun)	ไป Gonryun#alb1	65

@@ -1,0 +1,71 @@
+// Old Violet Box Obtainable Items Database
+//
+// Structure of Database:
+// GroupID,ItemID,Rate
+
+IG_VioletBox,501,14	// Red Potion
+IG_VioletBox,502,14	// Orange Potion
+IG_VioletBox,503,14	// Yellow Potion
+IG_VioletBox,504,14	// White Potion
+IG_VioletBox,505,14	// Blue Potion
+IG_VioletBox,506,14	// Green Potion
+IG_VioletBox,507,14	// Red Herb
+IG_VioletBox,508,14	// Yellow Herb
+IG_VioletBox,509,14	// White Herb
+IG_VioletBox,510,14	// Blue Herb
+IG_VioletBox,511,14	// Green Herb
+IG_VioletBox,512,14	// Apple
+IG_VioletBox,513,14	// Banana
+IG_VioletBox,514,14	// Grape
+IG_VioletBox,515,14	// Carrot
+IG_VioletBox,516,14	// Potato
+IG_VioletBox,517,14	// Meat
+IG_VioletBox,518,14	// Honey
+IG_VioletBox,519,14	// Milk
+IG_VioletBox,520,14	// Hinalle Leaflet
+IG_VioletBox,521,14	// Aloe Leaflet
+IG_VioletBox,522,14	// Mastela Fruit
+IG_VioletBox,523,14	// Holy Water
+IG_VioletBox,525,14	// Panacea
+IG_VioletBox,526,14	// Royal Jelly
+IG_VioletBox,528,14	// Monster Food
+IG_VioletBox,529,14	// Candy
+IG_VioletBox,530,14	// Candy Cane
+IG_VioletBox,531,14	// Apple Juice
+IG_VioletBox,532,14	// Banana Juice
+IG_VioletBox,533,14	// Grape Juice
+IG_VioletBox,534,14	// Carrot Juice
+IG_VioletBox,535,14	// Pumpkin
+IG_VioletBox,536,14	// Ice Cream
+IG_VioletBox,537,14	// Pet Food
+IG_VioletBox,538,14	// Well-baked Cookie
+IG_VioletBox,539,14	// Piece of Cake
+IG_VioletBox,544,14	// Raw Fish
+IG_VioletBox,545,14	// Condensed Red Potion
+IG_VioletBox,546,14	// Condensed Yellow Potion
+IG_VioletBox,547,14	// Condensed White Potion
+IG_VioletBox,548,14	// Cheese
+IG_VioletBox,549,14	// Yam
+IG_VioletBox,550,14	// Rice Cake
+IG_VioletBox,551,14	// Sushi
+IG_VioletBox,553,14	// Bao
+IG_VioletBox,555,14	// Traditional Rice Cake
+IG_VioletBox,558,14	// Chocolate
+IG_VioletBox,561,14	// White Chocolate
+IG_VioletBox,601,14	// Fly Wing
+IG_VioletBox,602,14	// Butterfly Wing
+IG_VioletBox,604,214	// Dead Branch
+IG_VioletBox,605,14	// Anodyne
+IG_VioletBox,606,14	// Aloevera
+IG_VioletBox,607,14	// Yggdrasil Berry
+IG_VioletBox,608,14	// Yggdrasil Seed
+IG_VioletBox,609,14	// Amulet
+IG_VioletBox,610,14	// Yggdrasil Leaf
+IG_VioletBox,611,14	// Magnifier
+IG_VioletBox,612,14	// Mini Furnace
+IG_VioletBox,613,14	// Iron Hammer
+IG_VioletBox,614,14	// Golden Hammer
+IG_VioletBox,615,14	// Oridecon Hammer
+IG_VioletBox,616,1		// Old Card Album
+IG_VioletBox,617,103	// Old Purple Box
+

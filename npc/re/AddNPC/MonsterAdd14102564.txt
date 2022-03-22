@@ -1,0 +1,37 @@
+gl_knt02,0,0,0,0		monster	Joker			1131,50,0,0,0
+gef_fild11,0,0,0,0		monster	Goblin Archer	1258,100,0,0,0
+//New
+alde_dun02,0,0,0,0  	monster	High Orc		1213,100,0,0,0
+alde_dun02,0,0,0,0  	monster	High Orc		1213,100,0,0,0
+alde_dun02,0,0,0,0  	monster	High Orc		1213,100,0,0,0
+
+mjolnir_05,0,0,0,0  	monster	Mantis			1139,100,0,0,0
+mjolnir_12,0,0,0,0  	monster	Mantis			1139,100,0,0,0
+prt_maze01,0,0,0,0  	monster	Mantis			1139,100,0,0,0
+prt_maze03,0,0,0,0  	monster	Mantis			1139,100,0,0,0
+
+mjolnir_03,0,0,0,0  	monster	Caramel			1103,100,0,0,0
+mjolnir_04,0,0,0,0  	monster	Caramel			1103,100,0,0,0
+mjolnir_06,0,0,0,0  	monster	Caramel			1103,100,0,0,0
+pay_fild07,0,0,0,0  	monster	Caramel			1103,100,0,0,0
+prt_maze01,0,0,0,0  	monster	Caramel			1103,100,0,0,0
+prt_maze03,0,0,0,0  	monster	Caramel			1103,100,0,0,0
+
+vis_h01,0,0,0,0  	monster	Gloom Under Night			1768,10,0,0,0
+vis_h01,0,0,0,0  	monster	Poring			1002,100,0,0,0
+vis_h01,0,0,0,0  	monster	High Orc			1213,30,0,0,0
+vis_h01,0,0,0,0  monster	Caramel			1103,10,0,0,0
+
+
+
+ama_dun03,0,0	monster	The Paper	1375,100,0,0
+cmd_fild02,0,0	monster	Mobster	1313,100,0,0
+
+ama_dun01,0,0	monster	Shinobi	1401,100,0,0
+ama_dun02,0,0	monster	Shinobi	1401,100,0,0
+ama_dun03,0,0	monster	Shinobi	1401,100,0,0
+
+gl_cas02,0,0	monster	Abysmal Knight	1219,10,0,0
+
+mjo_dun02,0,0	monster	Martin	1145,100,0,0
+prt_maze03,0,0	monster	Baphomet Jr	1101,100,0,0

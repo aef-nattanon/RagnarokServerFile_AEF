@@ -1,0 +1,1 @@
+payon.gat,0,0,0,0	boss_monster	Treasure Chest	1324,5,1800000,2400000,1

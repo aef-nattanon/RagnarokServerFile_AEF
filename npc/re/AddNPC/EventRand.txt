@@ -1,0 +1,411 @@
+morocc,179,71,3	script	Slot#1	563,{
+	
+	mes "^0066FF[Slot#1]^000000";		
+	mes "ตู้สล๊อต #1 พร้อมให้บริการค่ะ";
+	mes "จะเป็นการหมุนสล๊อต";
+	mes "กล้วย/ส้ม/แตงโม";
+	mes "โดยการวางเงิน ^0000FF1000z^000000";
+	mes "หากสล๊อตแตกจะได้รับ ^0000FF2000z^000000";
+	mes "ซึงต้องออกสล๊อต ^0000FFส้ม^000000 เท่านั้น!";
+	next;
+	//specialeffect 6;
+	menu "หมุนสล๊อต",w1;
+	
+	
+
+	w1:
+	if (Zeny >= 1000) {
+	switch(rand(1,6)){
+	
+	case 1:
+	mes "^0066FF[Slot#1]^000000";
+	mes "คุณแทงถูก สล๊อตแตก";
+	Zeny += 2000;
+	specialeffect 10;
+	close;	
+	break;
+	
+	case 2:
+	mes "^0066FF[Slot#1]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	Zeny -= 1000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 3:
+	mes "^0066FF[Slot#1]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	Zeny -= 1000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 4:
+	mes "^0066FF[Slot#1]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ แตงโม";
+	Zeny -= 1000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 5:
+	mes "^0066FF[Slot#1]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ แตงโม";
+	Zeny -= 1000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 6:
+	mes "^0066FF[Slot#1]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	Zeny -= 1000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	}
+	}else{
+	mes "^0066FF[Slot#1]^000000";
+	mes "Zeny คุณไม่เพียงพอ";	
+	}
+	Exit:
+	close;	
+
+	
+}
+
+morocc,183,71,3	script	Slot#2	563,{
+	
+	mes "^0066FF[Slot#2]^000000";		
+	mes "ตู้สล๊อต #2 พร้อมให้บริการค่ะ";
+	mes "จะเป็นการหมุนสล๊อต";
+	mes "กล้วย/ส้ม/แตงโม";
+	mes "โดยการวางเงิน ^0000FF5000z^000000";
+	mes "หากสล๊อตแตกจะได้รับ ^0000FF10000z^000000";
+	mes "ซึงต้องออกสล๊อต ^0000FFส้ม^000000 เท่านั้น!";
+	next;
+
+	menu "หมุนสล๊อต",w1;
+	
+	
+
+	w1:
+	if (Zeny >= 5000) {
+	switch(rand(1,6)){
+	
+	case 1:
+	mes "^0066FF[Slot#2]^000000";
+	mes "คุณแทงถูก สล๊อตแตก";
+	Zeny += 10000;
+	specialeffect 10;
+	close;	
+	break;
+	
+	case 2:
+	mes "^0066FF[Slot#2]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	Zeny -= 5000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 3:
+	mes "^0066FF[Slot#2]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	Zeny -= 5000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 4:
+	mes "^0066FF[Slot#2]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ แตงโม";
+	Zeny -= 5000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 5:
+	mes "^0066FF[Slot#2]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ แตงโม";
+	Zeny -= 5000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 6:
+	mes "^0066FF[Slot#2]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	Zeny -= 5000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	}
+	}else{
+	mes "^0066FF[Slot#2]^000000";
+	mes "Zeny คุณไม่เพียงพอ";	
+	}
+	Exit:
+	close;	
+}
+
+
+morocc,187,71,3	script	Slot#3	563,{
+	
+	mes "^0066FF[Slot#3]^000000";		
+	mes "ตู้สล๊อต #3พร้อมให้บริการค่ะ";
+	mes "จะเป็นการหมุนสล๊อต";
+	mes "กล้วย/ส้ม/แตงโม";
+	mes "โดยการวางเงิน ^0000FF10000z^000000";
+	mes "หากสล๊อตแตกจะได้รับ ^0000FF20000z^000000";
+	mes "ซึงต้องออกสล๊อต ^0000FFส้ม^000000 เท่านั้น!";
+	next;
+
+	menu "หมุนสล๊อต",w1;
+	
+	
+
+	w1:
+	if (Zeny >= 10000) {
+	switch(rand(1,6)){
+	
+	case 1:
+	mes "^0066FF[Slot#3]^000000";
+	mes "คุณแทงถูก สล๊อตแตก";
+	Zeny += 20000z;
+	specialeffect 10;
+	close;	
+	break;
+	
+	case 2:
+	mes "^0066FF[Slot#3]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	Zeny -= 10000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 3:
+	mes "^0066FF[Slot#3]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	Zeny -= 10000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 4:
+	mes "^0066FF[Slot#3]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ แตงโม";
+	Zeny -= 10000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 5:
+	mes "^0066FF[Slot#3]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ แตงโม";
+	Zeny -= 10000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 6:
+	mes "^0066FF[Slot#3]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	Zeny -= 10000;
+	specialeffect 18;
+	close;	
+	break;
+	
+	}
+	}else{
+	mes "^0066FF[Slot#3]^000000";
+	mes "Zeny คุณไม่เพียงพอ";	
+	}
+	Exit:
+	close;	
+}
+
+morocc,179,66,3	script	Slot#4	563,{
+	
+	mes "^0066FF[Slot#4]^000000";		
+	mes "ตู้สล๊อต #4 พร้อมให้บริการค่ะ";
+	mes "จะเป็นการหมุนสล๊อต";
+	mes "กล้วย/ส้ม/แตงโม";
+	mes "โดยการวาง ^0000FF5 cc^000000";
+	mes "หากสล๊อตแตกจะได้รับ ^0000FF10cc^000000";
+	mes "ซึงต้องออกสล๊อต ^0000FFส้ม^000000 เท่านั้น!";
+	next;
+
+	menu "หมุนสล๊อต",w1;
+	
+	
+
+	w1:
+	if(countitem(7720) < 5) goto CrownError;
+	switch(rand(1,6)){
+	
+	case 1:
+	mes "^0066FF[Slot#4]^000000";
+	mes "คุณแทงถูก สล๊อตแตก";
+	getitem 7720,10;
+	specialeffect 10;
+	close;	
+	break;
+	
+	case 2:
+	mes "^0066FF[Slot#4]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	delitem 7720,5;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 3:
+	mes "^0066FF[Slot#4]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	delitem 7720,5;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 4:
+	mes "^0066FF[Slot#4]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ แตงโม";
+	delitem 7720,5;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 5:
+	mes "^0066FF[Slot#4]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ แตงโม";
+	delitem 7720,5;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 6:
+	mes "^0066FF[Slot#4]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	delitem 7720,5;
+	specialeffect 18;
+	close;	
+	break;
+	
+	}
+	
+	CrownError:
+	mes "^0066FF[Slot#4]^000000";
+	mes "Cash คุณไม่เพียงพอ";	
+	close;
+	
+	Exit:
+	close;	
+}
+
+morocc,183,66,3	script	Slot#5	563,{
+	
+	mes "^0066FF[Slot#5]^000000";	
+	mes "ตู้สล๊อต #5 พร้อมให้บริการค่ะ";
+	mes "จะเป็นการหมุนสล๊อต";
+	mes "กล้วย/ส้ม/แตงโม";
+	mes "โดยการวาง ^0000FF50 cc^000000";
+	mes "หากสล๊อตแตกจะได้รับ ^0000FF100cc^000000";
+	mes "ซึงต้องออกสล๊อต ^0000FFส้ม^000000 เท่านั้น!";
+	next;
+
+	menu "หมุนสล๊อต",w1;
+	
+	
+
+	w1:
+	if(countitem(7720) < 50) goto CrownError;
+	switch(rand(1,6)){
+	
+	case 1:
+	mes "^0066FF[Slot#5]^000000";
+	mes "คุณแทงถูก สล๊อตแตก";
+	getitem 7720,100;
+	specialeffect 10;
+	close;	
+	break;
+	
+	case 2:
+	mes "^0066FF[Slot#5]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	delitem 7720,50;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 3:
+	mes "^0066FF[Slot#5]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	delitem 7720,50;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 4:
+	mes "^0066FF[Slot#5]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ แตงโม";
+	delitem 7720,50;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 5:
+	mes "^0066FF[Slot#5]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ แตงโม";
+	delitem 7720,50;
+	specialeffect 18;
+	close;	
+	break;
+	
+	case 6:
+	mes "^0066FF[Slot#5]^000000";
+	mes "คุณแทงผิด!เสียใจด้วย";
+	mes "คุณหมุนสล๊อตได้ กล้วย";
+	delitem 7720,50;
+	specialeffect 18;
+	close;	
+	break;
+	
+	}
+	
+	CrownError:
+	mes "^0066FF[Slot#5]^000000";
+	mes "Cash คุณไม่เพียงพอ";	
+	close;
+	
+	Exit:
+	close;	
+}

@@ -1,0 +1,103 @@
+-	cashshop	buffeven	-1,573:5//
+-	shop	buffevenx	-1,573:930//
+
+
+payon,90,133,4	script	Valentine’s Day	22,{
+
+mes "[ ^0000FF Valentine’s Day ^000000 ]";
+mes "ÊÇÑÊ´Õ¤Ø³ [^ff8000 " + strcharinfo(0) + " ^000000]";
+mes "¡Ô¨¡ÃÃÁ ÇÑ¹ Valentine’s Day";
+mes "^007fff 1. ·Óà¤ÇÊËÁÇ¡ Pink Beanie Hat^000000";
+mes "^007fff 2. «×éÍ Chocolate Drink^000000";
+mes "¡Ñê¡µØ¹äÇéãªéªèÇ§¡Ô¨¡ÃÃÁ ";
+mes "ªèÇ§^ff0100 13-16 ¡.¾^000000¹Õéà·èÒ¹Ñé¹";
+mes "â»ÃàÅ×Í¡ÃÒÂ¡ÒÃ";
+next;
+menu "- ·Óà¤ÇÊËÁÇ¡ Pink Beanie Hat",itemCrown,"- «×éÍ Chocolate Drink",Buyitems;
+next;
+
+Buyitems:
+mes "[ ^0000FF Valentine’s Day ^000000 ]";
+mes "¡Ñê¡µØ¹äÇéãªéªèÇ§¡Ô¨¡ÃÃÁ ";
+mes "«×éÍä´é´éÇÂ Zeny";
+mes "áÅÐ Cash Coin";
+mes "â»ÃàÅ×Í¡ÃÒÂ¡ÒÃ";
+menu "- «×éÍ´éÇÂ Zeny",Buyzeny,"- «×éÍ´éÇÂ Cash Coin",Buyitem;
+close;
+
+Buyzeny:
+close2;
+callshop "buffevenx",1;
+end;
+
+Buyitem:
+close2;
+callshop "buffeven",1;
+end;
+
+
+
+itemCrown:
+mes "[ ^0000FF Valentine’s Day ^000000 ]";
+mes "^007fff ·Óà¤ÇÊËÁÇ¡ Pink Beanie Hat ^000000 ";
+mes "¢éÒµéÍ§¡ÒÃÊÔè§¢Í§ã¹¡ÒÃáÅ¡à»ÅÕèÂ¹";
+mes "- ^0000FF ãªé Flame Heart 3 ªÔé¹ ^000000";
+mes "- ^0000FF ãªé  Cash Coin 200 ªÔé¹ ^000000";
+mes "- ^0000FF ãªé Zeny 200,000 ^000000";
+mes "à¨éÒÁÕÊÔè§¢Í§ÁÒáÅ¡à»ÅÕèÂ¹ËÃ×ÍäÁè";
+next;
+menu "- ¢éÒÁÕ¢Í§ÁÒáÅ¡à»ÅÕèÂ¹",itemCrownWork,"- Â¡àÅÔ¡",Cancle;
+itemCrownWork:
+next;
+if(Zeny >= 200000) {
+if(countitem(994) < 3) goto Flame;
+if(countitem(7720) < 200) goto CashCoin;
+
+delitem 994,3;
+delitem 7720,200;
+Zeny -= 200000;
+
+mes "[ ^0000FF Valentine’s Day ^000000 ]";
+mes "àÃÕÂºÃéÍÂ ¡ÒÃáÅ¡à»ÅÕèÂ¹àÃÕÂºÃéÍÂ¤èÐ";
+getitem 5237,1;
+}else{
+mes "[ ^0000FF Valentine’s Day ^000000 ]";
+mes "Zeny ¤Ø³äÁèà¾ÕÂ§¾Í";
+mes "¤ÃÒÇËÅÑ§àÇÐ¡ÅÑºÁÒËÒ¢éÒäËÁè¹Ð";
+close;
+}
+close;
+
+ZenyExit:
+mes "[ ^0000FF Valentine’s Day ^000000 ]";
+mes "Zeny ¤Ø³äÁèà¾ÕÂ§¾Í";
+mes "¤ÃÒÇËÅÑ§àÇÐ¡ÅÑºÁÒËÒ¢éÒäËÁè¹Ð";
+close;
+
+CashCoin:
+mes "[ ^0000FF Valentine’s Day ^000000 ]";
+mes "¤Ø³ÁÕäÍà·çÁÂÑ§äÁè¤Ãº CashCoin";
+mes "¤ÃÒÇËÅÑ§àÇÐ¡ÅÑºÁÒËÒ¢éÒäËÁè¹Ð";
+close;
+//--------------------------------------------------------
+Flame:
+mes "[ ^0000FF Valentine’s Day ^000000 ]";
+mes "¤Ø³ÁÕäÍà·çÁÂÑ§äÁè¤Ãº Flame Heart";
+mes "¤ÃÒÇËÅÑ§àÇÐ¡ÅÑºÁÒËÒ¢éÒäËÁè¹Ð";
+close;
+
+Cancle:
+mes "[ ^0000FF Valentine’s Day ^000000 ]";
+mes "¤ÃÒÇËÅÑ§àÇÐ¡ÅÑºÁÒËÒ¢éÒäËÁè¹Ð";
+close;
+
+
+
+OnInit:
+waitingroom "Valentine’s Day",0;
+end;
+
+}
+
+
+

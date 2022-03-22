@@ -1,0 +1,60 @@
+// Dead Branch Summonable Monsters Database
+//
+// Structure of Database:
+// MobRandomGroupID,MobID,DummyName,Rate
+MOBG_Branch_Of_Dead_Tree,0,Scorpion,1001
+MOBG_Branch_Of_Dead_Tree,1001,Scorpion,214285
+MOBG_Branch_Of_Dead_Tree,1002,Poring,1000000
+MOBG_Branch_Of_Dead_Tree,1004,Hornet,357142
+MOBG_Branch_Of_Dead_Tree,1005,Familiar,357142
+MOBG_Branch_Of_Dead_Tree,1007,Fabre,428571
+MOBG_Branch_Of_Dead_Tree,1008,Pupa,71428
+MOBG_Branch_Of_Dead_Tree,1009,Condor,357142
+MOBG_Branch_Of_Dead_Tree,1010,Willow,357142
+MOBG_Branch_Of_Dead_Tree,1011,Chonchon,357142
+MOBG_Branch_Of_Dead_Tree,1012,Roda Frog,357142
+MOBG_Branch_Of_Dead_Tree,1013,Wolf,357142
+MOBG_Branch_Of_Dead_Tree,1014,Spore,357142
+MOBG_Branch_Of_Dead_Tree,1015,Zombie,357142
+MOBG_Branch_Of_Dead_Tree,1016,Archer Skeleton,214285
+MOBG_Branch_Of_Dead_Tree,1018,Creamy,357142
+MOBG_Branch_Of_Dead_Tree,1019,Peco Peco,357142
+MOBG_Branch_Of_Dead_Tree,1020,Mandragora,357142
+MOBG_Branch_Of_Dead_Tree,1023,Orc Warrior,214285
+MOBG_Branch_Of_Dead_Tree,1024,Wormtail,357142
+MOBG_Branch_Of_Dead_Tree,1025,Boa,357142
+MOBG_Branch_Of_Dead_Tree,1026,Munak,214285
+MOBG_Branch_Of_Dead_Tree,1028,Soldier Skeleton,214285
+MOBG_Branch_Of_Dead_Tree,1029,Isis,71428
+MOBG_Branch_Of_Dead_Tree,1030,Anacondaq,214285
+MOBG_Branch_Of_Dead_Tree,1031,Poporing,357142
+MOBG_Branch_Of_Dead_Tree,1032,Verit,214285
+MOBG_Branch_Of_Dead_Tree,1033,Elder Willow,214285
+MOBG_Branch_Of_Dead_Tree,1034,Thara Frog,214285
+MOBG_Branch_Of_Dead_Tree,1035,Hunter Fly,71428
+MOBG_Branch_Of_Dead_Tree,1036,Ghoul,214285
+MOBG_Branch_Of_Dead_Tree,1037,Side Winder,71428
+MOBG_Branch_Of_Dead_Tree,1040,Golem,214285
+MOBG_Branch_Of_Dead_Tree,1041,Mummy,214285
+MOBG_Branch_Of_Dead_Tree,1042,Steel Chonchon,357142
+MOBG_Branch_Of_Dead_Tree,1044,Obeaune,214285
+MOBG_Branch_Of_Dead_Tree,1045,Marc,214285
+MOBG_Branch_Of_Dead_Tree,1047,Peco Peco Egg,71428
+MOBG_Branch_Of_Dead_Tree,1048,Thief Bug Egg,71428
+MOBG_Branch_Of_Dead_Tree,1049,Picky,357142
+MOBG_Branch_Of_Dead_Tree,1050,Picky,357142
+MOBG_Branch_Of_Dead_Tree,1051,Thief Bug,357142
+MOBG_Branch_Of_Dead_Tree,1052,Rocker,357142
+MOBG_Branch_Of_Dead_Tree,1053,Thief Bug Female,357142
+MOBG_Branch_Of_Dead_Tree,1054,Thief Bug Male,357142
+MOBG_Branch_Of_Dead_Tree,1055,Muka,357142
+MOBG_Branch_Of_Dead_Tree,1056,Smokie,357142
+MOBG_Branch_Of_Dead_Tree,1057,Yoyo,357142
+MOBG_Branch_Of_Dead_Tree,1058,Metaller,214285
+MOBG_Branch_Of_Dead_Tree,1060,Bigfoot,214285
+MOBG_Branch_Of_Dead_Tree,1061,Nightmare,71428
+MOBG_Branch_Of_Dead_Tree,1062,Santa Poring,357142
+MOBG_Branch_Of_Dead_Tree,1063,Lunatic,357142
+MOBG_Branch_Of_Dead_Tree,1064,Megalodon,214285
+MOBG_Branch_Of_Dead_Tree,1065,Strouf,214285
+MOBG_Branch_Of_Dead_Tree,1066,Vadon,357142

@@ -1,0 +1,116 @@
+﻿
+npc: npc/other/Global_Functions.txt
+npc: npc/other/CashShop_Functions.txt
+
+
+// --------------------------- Cities ---------------------------
+npc: npc/re/AddNPC/platinum_skills.txt
+npc: npc/re/AddNPC/GotoMorocc.txt
+npc: npc/re/AddNPC/JobChange2-2.txt
+//npc: npc/re/AddNPC/Rant.txt
+//npc: npc/re/AddNPC/Reset.txt
+npc: npc/re/AddNPC/PetShop.txt
+npc: npc/re/AddNPC/healer.txt
+//npc: npc/re/AddNPC/healer2.txt
+//npc: npc/re/AddNPC/stylist.txt
+//npc: npc/re/AddNPC/WarpPvPGvG.txt
+npc: npc/re/AddNPC/NoSell.txt
+npc: npc/re/AddNPC/CashShop.txt
+//npc: npc/re/AddNPC/codeitem.txt 
+//npc: npc/re/AddNPC/MonsterAdd14102564.txt
+npc: npc/re/AddNPC/VIPWarp1.txt
+//npc: npc/re/AddNPC/VIPWarp2.txt
+//npc: npc/re/AddNPC/socket_enchant.txt
+//npc: npc/re/AddNPC/EventRand.txt
+//npc: npc/re/AddNPC/AyoWarp.txt
+//npc: npc/re/AddNPC/AntiBot.txt
+npc: npc/re/AddNPC/Scripts_City_QuestShopHeadgear.txt
+npc: npc/re/test/OnInterInit.txt
+npc: npc/re/AddNPC/gympass.txt
+npc: npc/re/AddNPC/WeaponBuy.txt
+//npc: npc/re/AddNPC/CBT.txt
+npc: npc/re/AddNPC/FixWarpPayon.txt
+
+npc: npc/re/cities/alberta.txt
+npc: npc/re/cities/aldebaran.txt
+npc: npc/re/cities/comodo.txt
+npc: npc/re/cities/lutie.txt
+npc: npc/re/cities/yuno.txt
+npc: npc/re/cities/geffen.txt
+npc: npc/re/cities/izlude.txt
+npc: npc/re/cities/morocc.txt
+npc: npc/re/cities/payon.txt
+npc: npc/re/cities/prontera.txt
+npc: npc/re/cities/ayothaya.txt
+npc: npc/re/cities/niflheim.txt
+npc: npc/re/cities/umbala.txt
+// -------------------------- Merchant --------------------------
+npc: npc/re/merchants/alchemist.txt
+npc: npc/re/merchants/cash_hair.txt
+npc: npc/re/merchants/shops.txt
+npc: npc/re/merchants/refine.txt
+npc: npc/re/merchants/dye_maker.txt
+npc: npc/re/merchants/clothes_dyer.txt
+npc: npc/re/merchants/hair_dyer.txt
+npc: npc/re/merchants/hair_style.txt
+npc: npc/re/merchants/inn.txt
+npc: npc/re/merchants/milk_trader.txt
+npc: npc/re/merchants/icecream.txt
+npc: npc/re/merchants/renters.txt
+npc: npc/re/merchants/refine.txt
+npc: npc/re/merchants/old_pharmacist.txt
+npc: npc/re/merchants/buying_shops.txt
+npc: npc/re/merchants/gemstone.txt
+
+// --------------------------- Quests ---------------------------
+npc: npc/re/quests/2004_headgears.txt
+npc: npc/re/quests/bunnyband.txt
+npc: npc/re/quests/counteragent_mixture.txt
+npc: npc/re/quests/juice_maker.txt
+npc: npc/re/quests/magicalhatquest.txt
+npc: npc/re/quests/monstertamers.txt
+npc: npc/re/quests/mrsmile.txt
+npc: npc/re/quests/munak.txt
+npc: npc/re/quests/quests_alberta.txt
+npc: npc/re/quests/quests_aldebaran.txt
+npc: npc/re/quests/quests_comodo.txt
+npc: npc/re/quests/quests_geffen.txt
+npc: npc/re/quests/quests_Morocc.txt
+npc: npc/re/quests/quests_payon.txt
+npc: npc/re/quests/quests_prontera.txt
+npc: npc/re/quests/quests_yuno.txt
+
+
+npc: npc/re/kafras/functions_kafras.txt
+npc: npc/re/kafras/kafras_alb.txt
+npc: npc/re/kafras/kafras_alde.txt
+npc: npc/re/kafras/kafras_com.txt
+npc: npc/re/kafras/kafras_yun.txt
+npc: npc/re/kafras/kafras_dungeons.txt
+npc: npc/re/kafras/kafras_gef.txt
+npc: npc/re/kafras/kafras_izl.txt
+npc: npc/re/kafras/kafras_mor.txt
+npc: npc/re/kafras/kafras_pay.txt
+npc: npc/re/kafras/kafras_pron.txt
+
+
+// --------------------------- Others --------------------------- //ไม่ได้ใช้
+//npc: npc/pre-re/other/msg_boards.txt
+//npc: npc/pre-re/other/CashShop_Functions.txt
+//npc: npc/pre-re/other/Global_Functions.txt
+//npc: npc/pre-re/other/marriage.txt
+//npc: npc/pre-re/other/resetskill.txt
+//npc: npc/pre-re/other/pvp.txt
+
+// --------------------------- Guides ---------------------------
+//npc: npc/pre-re/guides/guides_alb.txt
+//npc: npc/pre-re/guides/guides_alde.txt
+//npc: npc/pre-re/guides/guides_cmd.txt
+//npc: npc/pre-re/guides/guides_juno.txt
+//npc: npc/pre-re/guides/guides_gef.txt
+//npc: npc/pre-re/guides/guides_izl.txt
+//npc: npc/pre-re/guides/guides_moc.txt
+//npc: npc/pre-re/guides/guides_pay.txt
+
+//npc: npc/re/guides/guides_pron.txt
+

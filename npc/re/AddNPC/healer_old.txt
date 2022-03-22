@@ -1,0 +1,158 @@
+//===== rAthena Script =======================================
+//= Healer
+//===== By: ==================================================
+//= Euphy
+//===== Current Version: =====================================
+//= 1.1
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= Basic healer script.
+//===== Additional Comments: =================================
+//= 1.0 Initial script.
+//= 1.1 Aligned coordinates with @go.
+//============================================================
+
+
+//= Translated & Modified by Start (Discord ID: Start#1356)
+
+
+-	script	Healer	-1,{
+	
+	if (countitem(7727) > 0) {
+		mes "^0066FF[ Buff Service ]^000000";
+		mes "บัฟฟรี !";
+		mes "AGI 30 นาที ";
+		mes "Blessing 30 นาที ";
+		mes "Heal !! ";
+		mes "ด้วย VIP Card";
+		switch(select("- > บัพ(AGI/Blessing/Heal) VIP Card:- >ออก")) {
+		//next;
+		case 1:
+		specialeffect2 EF_INCAGILITY;
+		sc_start SC_INCREASEAGI,1800000,10;//240000 - 3 time/ 360000 - 5Time // 120000 - 2 wi
+		specialeffect2 EF_BLESSING;
+		sc_start SC_BLESSING,1800000,10;
+		specialeffect 6;
+		specialeffect2 14;
+		percentheal 50000,50000;
+		close;
+		
+		case 2:
+		close;
+	}
+	}
+	if(BaseLevel < 40 ){
+		mes "^0066FF[ Buff Service ]^000000";
+		mes "บัฟฟรี !";
+		mes "AGI 30 นาที ";
+		mes "Blessing 30 นาที ";
+		mes "Heal !! ";
+		mes "^ff1a00เมื่อคุณเลเวลมากกว่า 40 ^000000";
+		mes "จะเสียค่าบัพครั้งละ ^0066ff800 Zeny^000000";
+		
+		switch(select("- > บัพ(AGI/Blessing/Heal):- >ออก")) {
+		
+		case 1:
+		specialeffect2 EF_INCAGILITY;
+		sc_start SC_INCREASEAGI,1800000,10;//240000 - 3 time/ 360000 - 5Time // 120000 - 2 wi
+		specialeffect2 EF_BLESSING;
+		sc_start SC_BLESSING,1800000,10;
+		specialeffect 6;
+		specialeffect2 14;
+		percentheal 50000,50000;
+		close;
+		
+		case 2:
+		close;
+		
+	}
+	}
+	
+	if(BaseLevel > 40 ){
+	
+	mes "^0066FF[ Buff Service ]^000000";
+	//mes "^ff1a00เมื่อคุณเลเวลมากกว่า 70 ^000000";
+	mes "ท่าน Lv. มากกว่า 40 แล้ว!";
+	mes "จะเสียค่าบัพครั้งละ ^0066ff800 Zeny^000000";
+	mes "AGI 30 นาที ";
+	mes "Blessing 30 นาที ";
+	mes "Heal !!";
+	
+	switch(select("- > บัพ(AGI/Blessing/Heal) 800 Zeny:- >ออก")) {
+	
+	
+		case 1:
+		if (Zeny >= 800) {
+		specialeffect2 EF_INCAGILITY;
+		sc_start SC_INCREASEAGI,1800000,10;//240000 - 3 time/ 360000 - 5Time // 120000 - 2 wi
+		specialeffect2 EF_BLESSING;
+		sc_start SC_BLESSING,1800000,10;
+		specialeffect 6;
+		specialeffect2 14;
+		percentheal 50000,50000;
+		Zeny -= 800;
+		}else{
+		mes "^0066FF[ Buff Service ]^000000";
+		mes "Zeny คุณไม่เพียงพอ";
+		}
+		close;
+		
+		case 2:
+		close;
+	
+	}
+	}else{
+	if(BaseLevel == 40 ){
+	mes "^0066FF[ Buff Service ]^000000";
+	//mes "^ff1a00เมื่อคุณเลเวลมากกว่า 70 ^000000";
+	mes "จะเสียค่าบัพครั้งละ ^0066ff800 Zeny^000000";
+	mes "AGI 30 นาที ";
+	mes "Blessing 30 นาที ";
+	
+	switch(select("- > บัพ(AGI/Blessing) 800 Zeny:- >ออก")) {
+	
+	
+		case 1:
+		if (Zeny >= 800) {
+		specialeffect2 EF_INCAGILITY;
+		sc_start SC_INCREASEAGI,1800000,10;//240000 - 3 time/ 360000 - 5Time // 120000 - 2 wi
+		specialeffect2 EF_BLESSING;
+		sc_start SC_BLESSING,1800000,10;
+		specialeffect 6;
+		specialeffect2 14;
+		percentheal 50000,50000;
+		Zeny -= 800;
+		}else{
+		mes "^0066FF[ Buff Service ]^000000";
+		mes "Zeny คุณไม่เพียงพอ";
+		}
+		close;
+		
+		case 2:
+		close;
+	
+	}
+	}
+	}
+		
+	
+	
+	OnInit:
+	waitingroom "บัพ(AGI/Blessing/Heal)",0;
+	end;
+}
+
+
+// Duplicates
+//============================================================
+
+payon,97,123,4	duplicate(Healer)	Buff Service#pay	620
+
+
+// Duplicates (Renewal)
+//============================================================
+
+// Add
+new_1-3,90,39,4	duplicate(Healer)	Buff Service#new	620
+new_2-3,91,40,4	duplicate(Healer)	Buff Service#new1	620

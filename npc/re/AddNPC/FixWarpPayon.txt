@@ -1,0 +1,2 @@
+//payon_in01,96,37,0	warp	yun01	1,1,payon,0,0
+payon_in01,110,77,0	warp	payon	1,1,payon_in01,64,99

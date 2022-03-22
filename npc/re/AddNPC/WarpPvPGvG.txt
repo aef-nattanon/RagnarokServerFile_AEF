@@ -1,0 +1,89 @@
+
+
+
+-	script	WarpServic	-1,{
+
+	
+	mes "^0066FF[WarpServic]^000000";		
+	mes "เจ้าต้องการไปสถานที่ใด";
+	mes "ข้าจะนำพาท่านไป";
+	mes "PvP MvP GvG ??";
+	next;
+	menu "- PvP All Player[ "+getmapusers("guild_vs3.gat")+" / 100 ]",w1,"- Guild War Warp[ "+getmapusers("prt_gld.gat")+" / 2000 ]",w3;
+	
+	w1:
+	if (getmapusers("guild_vs3.gat") == 100) goto Exit;
+	announce "คุณ [ "+strcharinfo(0)+" ] ได้เข้าสู่ [PvP All Player]",0,0x66CC00;
+	warp "guild_vs3.gat",0,0;
+	close;	
+	
+	w2:
+	mes "^0066FF[WarpServic]^000000";		
+	mes "เจ้าต้องการเข้าห้อง MvP ?";
+	mes "ในห้องนั้นมีบอส ^ff0066Gloom Under Night^000000";
+	mes "และลูกน้องเป็นจำนวนมาก!";
+	mes "รหัสมอนเตอร์บอสตัวนี้";
+	mes "^ff0066@mi 1768^000000";
+	next;
+	mes "^0066FF[WarpServic]^000000";		
+	mes "^ff0066Gloom Under Night^000000 ดอปไอเท็มดังนี้";
+	mes "^1900ffOld Blue Box ดอป100% 1ชิ้น^000000";
+	mes "^1900ffYggdrasil Berry ดอป100% 1ชิ้น^000000";
+	mes "^1900ffเหรียญแคช 500cc ดอป 2.40% 1ชิ้น^000000";
+	mes "^1900ffTCG Card 5.04% ขายได้20k^000000";
+	mes "มีค่าใช้จ่าย ^ff006650k^000000 ต่อรอบ!";
+	mes "เจ้าต้องการไปหรือไม่ ?";
+	next;
+	menu "ไปเลย",goroom;
+	goroom:
+	if (Zeny >= 50000) {
+	if (getmapusers("vis_h01") == 30) goto Exit;
+	announce "คุณ [ "+strcharinfo(0)+" ] ได้เข้าสู่ [ พื้นที่ MvP Warp]",0,0x66CC00;
+	warp "vis_h01.gat",0,0;
+	Zeny -= 50000;	
+	}else{
+	mes "^0066FF[WarpServic]^000000";	
+	mes "Zeny คุณไม่เพียงพอ";
+	}
+	close;
+	
+	w3:
+	if (getmapusers("prt_gld.gat") == 2000) goto Exit;
+	announce "คุณ [ "+strcharinfo(0)+" ] ได้เข้าสู่ [ พื้นที่ Guild Warp]",0,0x66CC00;
+	warp "prt_gld.gat",143,64;
+	close;	
+	
+	
+	
+	Exit:
+	close;	
+	
+	OnInit:
+	waitingroom "PVP/GVG War!",0;
+	end;
+	
+}
+
+prontera,141,89,6	duplicate(WarpServic)	WarpServic#alb1	417
+prontera,147,184,6	duplicate(WarpServic)	WarpServic#alb2	417
+//morocc,176,100,3	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,147,54,4	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,115,111,4	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,61,46,4	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,194,57,4	duplicate(WarpServic)	WarpServic#alb3	417
+geffen,117,62,6	duplicate(WarpServic)	WarpServic#alb4	417
+payon,99,122,6	duplicate(WarpServic)	WarpServic#alb5	417
+alberta,115,62,6	duplicate(WarpServic)	WarpServic#alb6	417
+izlude,131,101,6	duplicate(WarpServic)	WarpServic#alb7	417
+aldebaran,143,115,6	duplicate(WarpServic)	WarpServic#alb8	417
+comodo,180,152,6	duplicate(WarpServic)	WarpServic#alb9	417
+morocc,248,45,4	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,81,84,4	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,235,98,4	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,203,110,4	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,166,140,4	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,171,103,4	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,112,75,4	duplicate(WarpServic)	WarpServic#alb3	417
+morocc,52,75,4	duplicate(WarpServic)	WarpServic#alb3	417
+
+

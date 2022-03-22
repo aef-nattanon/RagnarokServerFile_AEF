@@ -1,0 +1,76 @@
+-	cashshop	qp_spet1	-1,14545:10,12497:5,12210:10 //exp
+-	cashshop	qp_spet2	-1,11573:1,23038:10,11572:1 //buff
+-	cashshop	qp_spet3	-1,22544:1,22543:1//speed
+-	cashshop	obbbox		-1,603:20,644:20,664:20,665:20,666:20,667:20,617:50,616:50
+-	cashshop	Costumx		-1,17477:50
+-	cashshop	Gym		-1,7776:20 
+-	cashshop	Vipshop		-1,17478:50 
+//-	cashshop	Costum2x		-1,17478:50 //ออร่า
+-	cashshop	qp_spet4	-1,//
+-	cashshop	Cashcoin	-1,7720:1 //
+
+
+payon,76,118,5	script	CashShop	117,{
+//function	script	OthersPet	{
+	mes "[ ^0000FF CashShop ^000000 ]";
+	mes "สวัสดี!";
+	mes "มีอะไรให้ข้าช่วยไหม?";
+	next;
+	menu "- บัตรคุณ EXP/Drop",Exp_box,"- ไอเท็มป้ำ HP/SP",buffz,"- ไอเท็มเร่ง",buffsped,"- กล่องสุ่มคอสปีก 7 วัน (ใช้สกิวGreedได้)",Costum,
+	"- กล่อง VIP Card 7 วัน",Vip,"- ใบ Gym Pass",Gymx,"- กล่องสุ่ม OBB/Gif/Old",obb,"- เหรียญ Cash Coin (รหัส 7720)",Cash,"- รออัพเดท",wait;
+
+	Cash:
+	close2;
+	callshop "Cashcoin",1;
+	end;
+	
+	Vip:
+	close2;
+	callshop "Vipshop",1;
+	end;
+	
+	Exp_box:
+	close2;
+	callshop "qp_spet1",1;
+	end;
+	
+	buffz:
+	close2;
+	callshop "qp_spet2",1;
+	end;
+	
+	buffsped:
+	close2;
+	callshop "qp_spet3",1;
+	end;
+	
+	obb:
+	close2;
+	callshop "obbbox",1;
+	end;
+	
+	Costum:
+	mes "[ ^0000FF CashShop ^000000 ]";
+	mes "สุ่มคอสปีก All สเตตัส +1";
+	mes "และสามารถใช้ สกิว Greed ได้";
+	close2;
+	callshop "Costumx",1;
+	end;
+	
+	Gymx:
+	mes "[ ^0000FF CashShop ^000000 ]";
+	mes "ใบ Gym Pass เพิ่มน้่ำหนัก";
+	close2;
+	callshop "Gym",1;
+	end;
+	
+	wait:
+	close2;
+	callshop "qp_spet4",1;
+	end;
+	
+	OnInit:
+	waitingroom "#CashShop",0;
+	end;
+	
+}
